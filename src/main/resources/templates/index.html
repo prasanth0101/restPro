@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Countrys: </h1>
+	<ul></ul>
+	
+	<script>
+		 fetch('localhost:8080/getall')
+		 .then(res => {
+			 return res.json
+		 })
+		 .then(data => {
+			 data.forEach(country =>{
+				 const markup = '<li>${getall.country_name}</li>';
+				 document.querySelector('ul').insertAdjacentElement("beforeend",markup);
+			 })
+		 })
+		 
+	</script>
+</body>
+</html>
